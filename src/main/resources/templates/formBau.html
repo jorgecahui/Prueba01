@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registro de Bautizados</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-4">
+    <div class="col-sm-8">
+        <form th:action="@{/guardarBautizo}" th:object="${bautizado}" method="POST">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Registro de Bautizados</h3>
+                </div>
+                <div class="card-body">
+                    <!-- Seleccionar Persona -->
+                    <div class="form-group">
+                        <label>Persona</label>
+                        <select th:field="*{persona.id}" class="form-control">
+                            <option th:each="persona : ${personas}"
+                                    th:value="${persona.id}"
+                                    th:text="${persona.nombre + ' ' + persona.apellido}"> <!-- Corregido: Usamos th:text para mostrar el nombre completo -->
+                            </option>
+                        </select>
+
+                        <div th:if="${#fields.hasErrors('persona.id')}" class="text-danger">
+                            <p th:errors="*{persona.id}"></p>
+                        </div>
+                    </div>
+
+                    <!-- Fecha de Bautizo -->
+                    <div class="form-group mt-3">
+                        <label>Fecha de Bautizo</label>
+                        <input th:field="*{fechaBautizo}" type="date" class="form-control" />
+                       
+                    </div>
+
+                    <!-- Lugar de Bautizo (si es necesario) -->
+
+                </div>
+                <div class="card-footer">
+                    <input type="submit" value="Guardar Bautizo" class="btn btn-primary">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

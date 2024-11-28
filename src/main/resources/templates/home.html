@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bautismo</title>
+    <link rel="stylesheet" th:href="@{/conectores/style.css}">
+</head>
+<body>
+<header>
+    <div>
+        <h1>Iglesia Villa Chullunquiani</h1>
+        <p>Bienvenido a la comunidad de Villa Chullunquiani</p>
+    </div>
+    <div class="header-buttons">
+        <button onclick="window.location.href='/login'">Iniciar Sesión</button>
+        <button onclick="window.location.href='/register'">Registrarse</button>
+    </div>
+</header>
+<p>Hola mundo</p>
+
+<div class="container">
+    <a href="/new">
+        <img th:src="@{/imagen/apopyo.jpeg}" alt="Apoyo">
+    </a>
+    <a href="indexproceso.html">
+        <img th:src="@{/imagen/proceso.jpeg}" alt="Proceso">
+    </a>
+    <a href="indexbautismo.html">
+        <img th:src="@{/imagen/bautizo.jpeg}" alt="Bautizo">
+    </a>
+</div>
+
+<div class="footer">
+    <div class="social-section">
+        <p>SÍGUENOS EN NUESTRAS REDES SOCIALES</p>
+        <a href="https://wa.me/999999999" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://facebook.com" target="_blank">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+
+    <div class="info-section">
+        <img th:src="@{/assets/img/logo.png}" alt="Logo Iglesia">
+        <p><strong>Iglesia Villa Chullunquiani</strong></p>
+        <p>Ubicación: Calle Principal #123, Villa Chullunquiani</p>
+        <p>Teléfono: +51 999 999 999</p>
+        <p>Email: contacto@iglesiavillachullunquiani.com</p>
+        <p class="policies">Políticas de Privacidad | Términos y Condiciones</p>
+    </div>
+</div>
+</body>
+</html>
